@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work — Manal Chaib Photography</title>
+    <meta name="description"
+        content="Photography portfolio of Manal Chaib. Browse portrait, street, editorial and documentary series." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cursor" id="cursor" aria-hidden="true">♥</div>
+    <div class="cursor-dot" id="cursor-dot" aria-hidden="true">♥</div>
+
+    <nav class="nav" id="nav">
+        <div class="nav-left">
+            <a href="index.html" class="nav-logo">Manal Chaib</a>
+        </div>
+        <div class="nav-right">
+            <a href="gallery.html" class="nav-link" aria-current="page">Work</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <p class="section-label reveal">Portfolio</p>
+        <h1 class="page-title reveal">
+            Selected<br /><em>Work</em>
+        </h1>
+        <div class="filter-bar" role="group" aria-label="Filter by category">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="portrait">Portrait</button>
+            <button class="filter-btn" data-filter="street">Street</button>
+            <button class="filter-btn" data-filter="editorial">Editorial</button>
+            <button class="filter-btn" data-filter="documentary">Documentary</button>
+        </div>
+    </div>
+
+    <div class="gallery-grid">
+        <!-- Portrait  -->
+        <div class="gallery-item reveal" data-cat="portrait">
+            <img src="images/DSCF4304.jpg" alt="Solitude I" />
+            <div class="gallery-caption">
+                <span class="gallery-caption-title">Solitude I</span>
+                <span class="gallery-caption-cat">Portrait</span>
+            </div>
+        </div>
+        <div class="gallery-item reveal" data-cat="street">
+            <div class="img-placeholder">Street 01</div>
+            <div class="gallery-caption">
+                <span class="gallery-caption-title">Urban Drift I</span>
+                <span class="gallery-caption-cat">Street</span>
+            </div>
+        </div>
+        <div class="gallery-item reveal" data-cat="editorial">
+            <div class="img-placeholder">Editorial 01</div>
+            <div class="gallery-caption">
+                <span class="gallery-caption-title">Film Studies I</span>
+                <span class="gallery-caption-cat">Editorial</span>
+            </div>
+        </div>
+        <div class="gallery-item reveal" data-cat="portrait">
+            <div class="img-placeholder">Portrait 02</div>
+            <div class="gallery-caption">
+                <span class="gallery-caption-title">Solitude II</span>
+                <span class="gallery-caption-cat">Portrait</span>
+            </div>
+        </div>
+        <div class="gallery-item reveal" data-cat="documentary">
+            <div class="img-placeholder">Documentary 01</div>
+            <div class="gallery-caption">
+                <span class="gallery-caption-title">Between Frames I</span>
+                <span class="gallery-caption-cat">Documentary</span>
+            </div>
+        </div>
+        <div class="gallery-item reveal" data-cat="street">
+            <div class="img-placeholder">Street 02</div>
+            <div class="gallery-caption">
+                <span class="gallery-caption-title">Urban Drift II</span>
+                <span class="gallery-caption-cat">Street</span>
+            </div>
+        </div>
+        <div class="gallery-item reveal" data-cat="editorial">
+            <div class="img-placeholder">Editorial 02</div>
+            <div class="gallery-caption">
+                <span class="gallery-caption-title">Film Studies II</span>
+                <span class="gallery-caption-cat">Editorial</span>
+            </div>
+        </div>
+        <div class="gallery-item reveal" data-cat="portrait">
+            <div class="img-placeholder">Portrait 03</div>
+            <div class="gallery-caption">
+                <span class="gallery-caption-title">Solitude III</span>
+                <span class="gallery-caption-cat">Portrait</span>
+            </div>
+        </div>
+        <div class="gallery-item reveal" data-cat="documentary">
+            <div class="img-placeholder">Documentary 02</div>
+            <div class="gallery-caption">
+                <span class="gallery-caption-title">Between Frames II</span>
+                <span class="gallery-caption-cat">Documentary</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">✕</button>
+        <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

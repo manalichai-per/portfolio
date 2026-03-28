@@ -1,0 +1,166 @@
+// ============================================================
+//  script.js — Manal Chaib Photography Portfolio
+// ============================================================
+
+// ── Preloader ─────────────────────────────────────────────
+const preloader = document.getElementById('preloader');
+if (preloader) {
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            preloader.classList.add('hidden');
+        }, 1200);
+    });
+}
+
+// ── Custom cursor ─────────────────────────────────────────
+const cursor = document.getElementById('cursor');
+const cursorDot = document.getElementById('cursor-dot');
+
+if (cursor && cursorDot) {
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+
+    document.addEventListener('mousemove', e => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursorDot.style.left = mouseX + 'px';
+        cursorDot.style.top = mouseY + 'px';
+    });
+
+    // Smooth lag on the ring
+    function animateCursor() {
+        cursorX += (mouseX - cursorX) * 0.12;
+        cursorY += (mouseY - cursorY) * 0.12;
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Hover expand
+    document.querySelectorAll('a, button, .film-frame, .gallery-item, .filter-btn').forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+    });
+}
+
+// ── Nav scroll state ──────────────────────────────────────
+const nav = document.getElementById('nav');
+if (nav) {
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 80);
+    }, { passive: true });
+}
+
+// ── Reveal on scroll (IntersectionObserver) ───────────────
+const reveals = document.querySelectorAll('.reveal');
+const revealItems = document.querySelectorAll('.reveal-item');
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+reveals.forEach(el => revealObserver.observe(el));
+
+// Stagger project items
+revealItems.forEach((el, i) => {
+    el.style.setProperty('--i', i);
+    revealObserver.observe(el);
+});
+
+// ── Light/dark section body class ─────────────────────────
+const lightSections = document.querySelectorAll('.about-teaser');
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            document.body.classList.add('light-section');
+        } else {
+            document.body.classList.remove('light-section');
+        }
+    });
+}, { threshold: 0.3 });
+lightSections.forEach(s => sectionObserver.observe(s));
+
+// ── Gallery filter logic ──────────────────────────────────
+const filterBtns = document.querySelectorAll('.filter-btn');
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        galleryItems.forEach(item => {
+            if (filter === 'all' || item.dataset.cat === filter) {
+                item.style.display = '';
+                item.style.opacity = '0';
+                setTimeout(() => { item.style.opacity = '1'; item.style.transition = 'opacity 0.4s'; }, 20);
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+});
+
+// ── Lightbox ──────────────────────────────────────────────
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxClose = document.getElementById('lightbox-close');
+
+if (lightbox) {
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const img = item.querySelector('img');
+            if (img && lightboxImg) {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+            }
+            lightbox.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    function closeLightbox() {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => {
+        if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeLightbox();
+    });
+}
+
+// ── Filmstrip drag-to-scroll ──────────────────────────────
+const filmstrip = document.getElementById('filmstrip');
+if (filmstrip) {
+    let isDown = false, startX, scrollLeft;
+
+    filmstrip.addEventListener('mousedown', e => {
+        isDown = true;
+        filmstrip.style.animationPlayState = 'paused';
+        startX = e.pageX - filmstrip.offsetLeft;
+        scrollLeft = filmstrip.scrollLeft;
+    });
+    filmstrip.addEventListener('mouseleave', () => {
+        isDown = false;
+        filmstrip.style.animationPlayState = 'running';
+    });
+    filmstrip.addEventListener('mouseup', () => {
+        isDown = false;
+        filmstrip.style.animationPlayState = 'running';
+    });
+    filmstrip.addEventListener('mousemove', e => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - filmstrip.offsetLeft;
+        filmstrip.scrollLeft = scrollLeft - (x - startX) * 1.5;
+    });
+}

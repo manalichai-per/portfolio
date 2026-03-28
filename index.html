@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manal Chaib — Photography</title>
+  <meta name="description"
+    content="Manal Chaib is a photographer capturing raw, cinematic moments. Based everywhere." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Film grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Custom cursor (heart) -->
+  <div class="cursor" id="cursor" aria-hidden="true">♥</div>
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true">♥</div>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <span class="preloader-text">M C</span>
+  </div>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="nav" id="nav">
+    <div class="nav-left">
+      <a href="index.html" class="nav-logo">Manal Chaib</a>
+    </div>
+    <div class="nav-right">
+      <a href="gallery.html" class="nav-link">Work</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-placeholder">
+        <span class="hero-placeholder-text">Your hero image here</span>
+      </div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal">— Selected Works</p>
+      <h1 class="hero-title reveal">
+        <em>Manal</em><br />Chaib
+      </h1>
+      <div class="hero-meta reveal">
+        <span>Photography by Manal Chaib</span>
+        <a href="gallery.html" class="hero-cta">View Portfolio ↗</a>
+      </div>
+    </div>
+    <div class="scroll-indicator reveal">
+      <span class="scroll-line"></span>
+      <span class="scroll-label">Scroll</span>
+    </div>
+  </section>
+
+  <!-- ==================== PROJECT LIST (bpowell style) ==================== -->
+  <section class="projects" id="work">
+    <div class="projects-header">
+      <span class="section-label">Selected Series</span>
+    </div>
+    <ul class="projects-list">
+      <li class="project-item reveal-item">
+        <a href="gallery.html" class="project-link">
+          <span class="project-num">01</span>
+          <span class="project-title">Solitude</span>
+          <span class="project-meta">Portrait · 2025</span>
+          <span class="project-arrow">↗</span>
+        </a>
+        <div class="project-preview">
+          <div class="project-preview-img img-placeholder"></div>
+        </div>
+      </li>
+      <li class="project-item reveal-item">
+        <a href="gallery.html" class="project-link">
+          <span class="project-num">02</span>
+          <span class="project-title">Golden Hour</span>
+          <span class="project-meta">Landscape · 2025</span>
+          <span class="project-arrow">↗</span>
+        </a>
+        <div class="project-preview">
+          <div class="project-preview-img img-placeholder"></div>
+        </div>
+      </li>
+      <li class="project-item reveal-item">
+        <a href="gallery.html" class="project-link">
+          <span class="project-num">03</span>
+          <span class="project-title">Urban Drift</span>
+          <span class="project-meta">Street · 2024</span>
+          <span class="project-arrow">↗</span>
+        </a>
+        <div class="project-preview">
+          <div class="project-preview-img img-placeholder"></div>
+        </div>
+      </li>
+      <li class="project-item reveal-item">
+        <a href="gallery.html" class="project-link">
+          <span class="project-num">04</span>
+          <span class="project-title">Film Studies</span>
+          <span class="project-meta">Editorial · 2024</span>
+          <span class="project-arrow">↗</span>
+        </a>
+        <div class="project-preview">
+          <div class="project-preview-img img-placeholder"></div>
+        </div>
+      </li>
+      <li class="project-item reveal-item">
+        <a href="gallery.html" class="project-link">
+          <span class="project-num">05</span>
+          <span class="project-title">Between Frames</span>
+          <span class="project-meta">Documentary · 2024</span>
+          <span class="project-arrow">↗</span>
+        </a>
+        <div class="project-preview">
+          <div class="project-preview-img img-placeholder"></div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ==================== ABOUT TEASER ==================== -->
+  <section class="about-teaser" id="about-teaser">
+    <div class="about-teaser-inner">
+      <div class="about-teaser-text">
+        <span class="section-label reveal">About</span>
+        <blockquote class="about-quote reveal">
+          "I photograph the spaces between — the glance before the smile, the pause before the word."
+        </blockquote>
+        <p class="about-body reveal">
+          Manal Chaib is a photographer based between cities, drawn to raw light and quiet moments. Her work spans
+          portraiture, documentary, and editorial photography.
+        </p>
+        <a href="about.html" class="text-link reveal">Read more ↗</a>
+      </div>
+      <div class="about-teaser-image reveal">
+        <div class="img-placeholder img-tall">
+          <span>Your portrait here</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FILMSTRIP ==================== -->
+  <section class="filmstrip-section">
+    <div class="filmstrip-track" id="filmstrip">
+      <div class="film-frame img-placeholder"><span>01</span></div>
+      <div class="film-frame img-placeholder"><span>02</span></div>
+      <div class="film-frame img-placeholder"><span>03</span></div>
+      <div class="film-frame img-placeholder"><span>04</span></div>
+      <div class="film-frame img-placeholder"><span>05</span></div>
+      <div class="film-frame img-placeholder"><span>06</span></div>
+      <div class="film-frame img-placeholder"><span>07</span></div>
+      <div class="film-frame img-placeholder"><span>08</span></div>
+      <!-- Duplicated for infinite scroll -->
+      <div class="film-frame img-placeholder"><span>01</span></div>
+      <div class="film-frame img-placeholder"><span>02</span></div>
+      <div class="film-frame img-placeholder"><span>03</span></div>
+      <div class="film-frame img-placeholder"><span>04</span></div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="contact-top">
+        <span class="section-label reveal">Get in touch</span>
+        <div class="available-badge reveal">
+          <span class="dot"></span> Available for work
+        </div>
+      </div>
+      <a href="mailto:hello@manalchaib.com" class="contact-email reveal">
+        hello@manalchaib.com
+      </a>
+      <p class="contact-sub reveal">
+        Open for portrait sessions, editorial commissions & collaborations.
+      </p>
+    </div>
+
+    <!-- Footer (animated marquee + links) -->
+    <footer class="footer">
+      <div class="footer-marquee">
+        <div class="marquee-track" aria-hidden="true">
+          <span>Photography by Manal Chaib &nbsp;·&nbsp; </span>
+          <span>Portrait &nbsp;·&nbsp; </span>
+          <span>Street &nbsp;·&nbsp; </span>
+          <span>Editorial &nbsp;·&nbsp; </span>
+          <span>Documentary &nbsp;·&nbsp; </span>
+          <span>Photography by Manal Chaib &nbsp;·&nbsp; </span>
+          <span>Portrait &nbsp;·&nbsp; </span>
+          <span>Street &nbsp;·&nbsp; </span>
+          <span>Editorial &nbsp;·&nbsp; </span>
+          <span>Documentary &nbsp;·&nbsp; </span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 Manal Chaib</span>
+        <div class="footer-links">
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-link">Instagram</a>
+          <a href="https://vsco.co" target="_blank" rel="noopener" class="footer-link">VSCO</a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener" class="footer-link">TikTok</a>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
