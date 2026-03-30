@@ -64,7 +64,7 @@
 
   --font-display: 'Phosphene', 'Cormorant Garamond', 'Georgia', serif;
   --font-serif: 'Cormorant Garamond', 'Georgia', serif;
-  --font-sans: 'Outfit', -apple-system, sans-serif;
+  --font-sans: 'Cormorant Garamond', 'Georgia', serif;
 
   --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -382,6 +382,7 @@ ul {
   letter-spacing: -0.02em;
   color: var(--text);
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .hero-title em {
@@ -683,7 +684,7 @@ ul {
 .filmstrip-track {
   display: flex;
   gap: 1rem;
-  animation: filmstrip-scroll 30s linear infinite;
+  animation: filmstrip-scroll 60s linear infinite;
   width: max-content;
 }
 
@@ -702,10 +703,10 @@ ul {
 }
 
 .film-frame {
-  width: 260px;
-  height: 180px;
+  width: 320px;
+  height: 220px;
   flex-shrink: 0;
-  transition: transform 0.3s var(--ease), filter 0.3s;
+  transition: transform 0.3s var(--ease), filter 0.3s, box-shadow 0.3s var(--ease);
   filter: grayscale(20%) sepia(10%);
   cursor: pointer;
 }
