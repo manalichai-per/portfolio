@@ -8,7 +8,7 @@ if (preloader) {
     window.addEventListener('load', () => {
         setTimeout(() => {
             preloader.classList.add('hidden');
-        }, 1200);
+        }, 2000);
     });
 }
 

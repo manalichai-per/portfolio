@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -43,12 +43,6 @@
 
   <!-- ==================== HERO ==================== -->
   <section class="hero" id="hero">
-    <div class="hero-bg">
-      <div class="hero-placeholder">
-        <span class="hero-placeholder-text">Your hero image here</span>
-      </div>
-    </div>
-    <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-eyebrow reveal">— Selected Works</p>
       <h1 class="hero-title reveal">
@@ -62,6 +56,25 @@
     <div class="scroll-indicator reveal">
       <span class="scroll-line"></span>
       <span class="scroll-label">Scroll</span>
+    </div>
+  </section>
+
+  <!-- ==================== FILMSTRIP ==================== -->
+  <section class="filmstrip-section">
+    <div class="filmstrip-track" id="filmstrip">
+      <div class="film-frame img-placeholder"><span>01</span></div>
+      <div class="film-frame img-placeholder"><span>02</span></div>
+      <div class="film-frame img-placeholder"><span>03</span></div>
+      <div class="film-frame img-placeholder"><span>04</span></div>
+      <div class="film-frame img-placeholder"><span>05</span></div>
+      <div class="film-frame img-placeholder"><span>06</span></div>
+      <div class="film-frame img-placeholder"><span>07</span></div>
+      <div class="film-frame img-placeholder"><span>08</span></div>
+      <!-- Duplicated for infinite scroll -->
+      <div class="film-frame img-placeholder"><span>01</span></div>
+      <div class="film-frame img-placeholder"><span>02</span></div>
+      <div class="film-frame img-placeholder"><span>03</span></div>
+      <div class="film-frame img-placeholder"><span>04</span></div>
     </div>
   </section>
 
@@ -129,45 +142,7 @@
     </ul>
   </section>
 
-  <!-- ==================== ABOUT TEASER ==================== -->
-  <section class="about-teaser" id="about-teaser">
-    <div class="about-teaser-inner">
-      <div class="about-teaser-text">
-        <span class="section-label reveal">About</span>
-        <blockquote class="about-quote reveal">
-          "Meow meow meow"
-        </blockquote>
-        <p class="about-body reveal">
-          Just love being curious
-        </p>
-        <a href="about.html" class="text-link reveal">Read more ↗</a>
-      </div>
-      <div class="about-teaser-image reveal">
-        <div class="img-placeholder img-tall">
-          <span>iz me</span>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ==================== FILMSTRIP ==================== -->
-  <section class="filmstrip-section">
-    <div class="filmstrip-track" id="filmstrip">
-      <div class="film-frame img-placeholder"><span>01</span></div>
-      <div class="film-frame img-placeholder"><span>02</span></div>
-      <div class="film-frame img-placeholder"><span>03</span></div>
-      <div class="film-frame img-placeholder"><span>04</span></div>
-      <div class="film-frame img-placeholder"><span>05</span></div>
-      <div class="film-frame img-placeholder"><span>06</span></div>
-      <div class="film-frame img-placeholder"><span>07</span></div>
-      <div class="film-frame img-placeholder"><span>08</span></div>
-      <!-- Duplicated for infinite scroll -->
-      <div class="film-frame img-placeholder"><span>01</span></div>
-      <div class="film-frame img-placeholder"><span>02</span></div>
-      <div class="film-frame img-placeholder"><span>03</span></div>
-      <div class="film-frame img-placeholder"><span>04</span></div>
-    </div>
-  </section>
 
   <!-- ==================== CONTACT ==================== -->
   <section class="contact" id="contact">
