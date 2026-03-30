@@ -34,7 +34,7 @@
 
 @font-face {
   font-family: 'Monosnapit';
-  src: url('fonts/monosnapit') format('woff');
+  src: url('fonts/monosnapit.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -395,8 +395,9 @@ ul {
   transition: transform 0.5s var(--ease);
 }
 
+h1.hero-title.visible:hover,
 .hero-title:hover {
-  transform: scale(1.08);
+  transform: scale(1.08) !important;
 }
 
 .hero-title::before {
