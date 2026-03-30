@@ -34,10 +34,10 @@
 
 :root {
   /* ── Baby Pink / White palette ── */
-  --bg: #ffc0cb;
-  /* baby pink */
-  --surface: #ffb6c1;
-  /* slightly darker baby pink surface */
+  --bg: #ffe4e8;
+  /* light baby pink */
+  --surface: #ffd1dc;
+  /* shaded baby pink surface */
   --surface-light: #ffffff;
   /* pure white */
   --surface-dark: #f2c4d0;
@@ -62,7 +62,7 @@
   --border: rgba(232, 99, 126, 0.12);
   --border-dark: rgba(232, 99, 126, 0.2);
 
-  --font-display: 'Phosphene', 'Cormorant Garamond', 'Georgia', serif;
+  --font-display: 'DM Serif Display', 'Phosphene', 'Cormorant Garamond', 'Georgia', serif;
   --font-serif: 'Cormorant Garamond', 'Georgia', serif;
   --font-sans: 'Cormorant Garamond', 'Georgia', serif;
 
@@ -684,7 +684,7 @@ ul {
 .filmstrip-track {
   display: flex;
   gap: 1rem;
-  animation: filmstrip-scroll 60s linear infinite;
+  animation: filmstrip-scroll 120s linear infinite;
   width: max-content;
 }
 
