@@ -110,6 +110,18 @@ closeButtons.forEach(btn => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.location.hash) {
+        const hashId = window.location.hash.substring(1);
+        const targetView = document.getElementById(hashId);
+        if (targetView && targetView.classList.contains('folder-view')) {
+            targetView.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            history.replaceState(null, null, ' '); // Clean URL optionally
+        }
+    }
+});
+
 // ── Lightbox for Folder Views ──────────────────────────────
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
