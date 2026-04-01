@@ -35,74 +35,98 @@
     <section class="folder-diagram">
         <div class="folder-diagram-inner">
             <svg class="diagram-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <!-- Lines from center to 4 corners -->
-                <line x1="50" y1="50" x2="20" y2="25" />
-                <line x1="50" y1="50" x2="80" y2="25" />
-                <line x1="50" y1="50" x2="20" y2="75" />
-                <line x1="50" y1="50" x2="80" y2="75" />
+                <!-- Smooth curved paths instead of solid lines -->
+                <path class="fairy-string" d="M50,50 Q25,35 20,25" />
+                <path class="fairy-string" d="M50,50 Q75,35 80,25" />
+                <path class="fairy-string" d="M50,50 Q25,65 20,75" />
+                <path class="fairy-string" d="M50,50 Q75,65 80,75" />
             </svg>
 
             <!-- Center -->
             <div class="folder-node root-folder">
-                <span class="folder-icon">🗂</span>
-                <span class="folder-name">Portfolio</span>
+                <span class="folder-icon text-star">✦</span>
+                <span class="folder-name">Ideas</span>
             </div>
 
             <!-- Nodes -->
             <div class="folder-node sub-folder node-tl" data-target="folder-football">
-                <span class="folder-icon">📁</span>
+                <span class="folder-icon text-star">✦</span>
                 <span class="folder-name">Football</span>
             </div>
             <div class="folder-node sub-folder node-tr" data-target="folder-korea">
-                <span class="folder-icon">📁</span>
+                <span class="folder-icon text-star">✦</span>
                 <span class="folder-name">Korea 2025</span>
             </div>
             <div class="folder-node sub-folder node-bl" data-target="folder-sudan">
-                <span class="folder-icon">📁</span>
+                <span class="folder-icon text-star">✦</span>
                 <span class="folder-name">Steps for Sudan</span>
             </div>
             <div class="folder-node sub-folder node-br" data-target="folder-bakery">
-                <span class="folder-icon">📁</span>
+                <span class="folder-icon text-star">✦</span>
                 <span class="folder-name">Mimis Bakery</span>
             </div>
         </div>
     </section>
 
-    <!-- Folder Contents (Hidden Overlays) -->
+    <!-- Folder Contents (360 3D Carousel Overlays) -->
     <div class="folder-overlays">
         <div class="folder-view" id="folder-football">
-            <button class="close-folder">← Back to Portfolio</button>
-            <h2 class="folder-title">Football</h2>
-            <div class="folder-grid">
-                <img src="images/DSCF1095.jpeg" class="folder-img" alt="Football">
-                <img src="images/DSCF1105.jpeg" class="folder-img" alt="Football">
+            <button class="close-folder">← Back to Ideas</button>
+            <div class="carousel-3d-wrapper">
+                <h2 class="folder-title center-title">Football</h2>
+                <div class="carousel-3d-scene">
+                    <img src="images/DSCF1095.jpeg" class="carousel-img" alt="Football">
+                    <img src="images/DSCF1105.jpeg" class="carousel-img" alt="Football">
+                    <img src="images/DSCF1095.jpeg" class="carousel-img" alt="Football">
+                    <img src="images/DSCF1105.jpeg" class="carousel-img" alt="Football">
+                    <img src="images/DSCF1095.jpeg" class="carousel-img" alt="Football">
+                    <img src="images/DSCF1105.jpeg" class="carousel-img" alt="Football">
+                </div>
             </div>
         </div>
 
         <div class="folder-view" id="folder-korea">
-            <button class="close-folder">← Back to Portfolio</button>
-            <h2 class="folder-title">Korea 2025</h2>
-            <div class="folder-grid">
-                <img src="images/DSCF4329.JPG" class="folder-img" alt="Korea 2025">
+            <button class="close-folder">← Back to Ideas</button>
+            <div class="carousel-3d-wrapper">
+                <h2 class="folder-title center-title">Korea 2025</h2>
+                <div class="carousel-3d-scene">
+                    <img src="images/DSCF4329.JPG" class="carousel-img" alt="Korea 2025">
+                    <img src="images/DSCF4329.JPG" class="carousel-img" alt="Korea 2025">
+                    <img src="images/DSCF4329.JPG" class="carousel-img" alt="Korea 2025">
+                    <img src="images/DSCF4329.JPG" class="carousel-img" alt="Korea 2025">
+                    <img src="images/DSCF4329.JPG" class="carousel-img" alt="Korea 2025">
+                    <img src="images/DSCF4329.JPG" class="carousel-img" alt="Korea 2025">
+                </div>
             </div>
         </div>
 
         <div class="folder-view" id="folder-sudan">
-            <button class="close-folder">← Back to Portfolio</button>
-            <h2 class="folder-title">Steps for Sudan</h2>
-            <div class="folder-grid">
-                <img src="images/DSCF1935.jpg" class="folder-img" alt="Sudan">
-                <img src="images/DSCF1254.jpeg" class="folder-img" alt="Sudan">
+            <button class="close-folder">← Back to Ideas</button>
+            <div class="carousel-3d-wrapper">
+                <h2 class="folder-title center-title">Steps for Sudan</h2>
+                <div class="carousel-3d-scene">
+                    <img src="images/DSCF1935.jpg" class="carousel-img" alt="Sudan">
+                    <img src="images/DSCF1254.jpeg" class="carousel-img" alt="Sudan">
+                    <img src="images/DSCF1935.jpg" class="carousel-img" alt="Sudan">
+                    <img src="images/DSCF1254.jpeg" class="carousel-img" alt="Sudan">
+                    <img src="images/DSCF1935.jpg" class="carousel-img" alt="Sudan">
+                    <img src="images/DSCF1254.jpeg" class="carousel-img" alt="Sudan">
+                </div>
             </div>
         </div>
 
         <div class="folder-view" id="folder-bakery">
-            <button class="close-folder">← Back to Portfolio</button>
-            <h2 class="folder-title">Mimis Bakery</h2>
-            <div class="folder-grid">
-                <img src="images/DSCF4303.JPG" class="folder-img" alt="Bakery">
-                <img src="images/DSCF4240.JPG" class="folder-img" alt="Bakery">
-                <img src="images/DSCF1199.jpeg" class="folder-img" alt="Bakery">
+            <button class="close-folder">← Back to Ideas</button>
+            <div class="carousel-3d-wrapper">
+                <h2 class="folder-title center-title">Mimis Bakery</h2>
+                <div class="carousel-3d-scene">
+                    <img src="images/DSCF4303.JPG" class="carousel-img" alt="Bakery">
+                    <img src="images/DSCF4240.JPG" class="carousel-img" alt="Bakery">
+                    <img src="images/DSCF1199.jpeg" class="carousel-img" alt="Bakery">
+                    <img src="images/DSCF4303.JPG" class="carousel-img" alt="Bakery">
+                    <img src="images/DSCF4240.JPG" class="carousel-img" alt="Bakery">
+                    <img src="images/DSCF1199.jpeg" class="carousel-img" alt="Bakery">
+                </div>
             </div>
         </div>
     </div>

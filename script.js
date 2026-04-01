@@ -111,6 +111,20 @@ closeButtons.forEach(btn => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+    // 3D Carousel Math
+    const scenes = document.querySelectorAll('.carousel-3d-scene');
+    scenes.forEach(scene => {
+        const images = scene.querySelectorAll('.carousel-img');
+        if(images.length === 0) return;
+        
+        const angle = 360 / images.length;
+        const tz = Math.round((280 / 2) / Math.tan(Math.PI / images.length)) + 50; 
+        
+        images.forEach((img, i) => {
+            img.style.transform = `rotateY(${i * angle}deg) translateZ(${tz}px)`;
+        });
+    });
+
     if (window.location.hash) {
         const hashId = window.location.hash.substring(1);
         const targetView = document.getElementById(hashId);
@@ -126,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const lightboxClose = document.getElementById('lightbox-close');
-const folderImages = document.querySelectorAll('.folder-img');
+const folderImages = document.querySelectorAll('.carousel-img');
 
 if (lightbox) {
     folderImages.forEach(img => {
