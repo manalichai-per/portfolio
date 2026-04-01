@@ -85,48 +85,50 @@ const sectionObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 lightSections.forEach(s => sectionObserver.observe(s));
 
-// ── Gallery filter logic ──────────────────────────────────
-const filterBtns = document.querySelectorAll('.filter-btn');
-const galleryItems = document.querySelectorAll('.gallery-item');
+// ── Folder Diagram Logic ──────────────────────────────────
+const subFolders = document.querySelectorAll('.sub-folder');
+const closeButtons = document.querySelectorAll('.close-folder');
 
-filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        galleryItems.forEach(item => {
-            if (filter === 'all' || item.dataset.cat === filter) {
-                item.style.display = '';
-                item.style.opacity = '0';
-                setTimeout(() => { item.style.opacity = '1'; item.style.transition = 'opacity 0.4s'; }, 20);
-            } else {
-                item.style.display = 'none';
-            }
-        });
+subFolders.forEach(folder => {
+    folder.addEventListener('click', () => {
+        const targetId = folder.dataset.target;
+        const targetView = document.getElementById(targetId);
+        if (targetView) {
+            targetView.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
     });
 });
 
-// ── Lightbox ──────────────────────────────────────────────
+closeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const parentView = btn.closest('.folder-view');
+        if (parentView) {
+            parentView.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+});
+
+// ── Lightbox for Folder Views ──────────────────────────────
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const lightboxClose = document.getElementById('lightbox-close');
+const folderImages = document.querySelectorAll('.folder-img');
 
 if (lightbox) {
-    galleryItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const img = item.querySelector('img');
-            if (img && lightboxImg) {
+    folderImages.forEach(img => {
+        img.addEventListener('click', () => {
+            if (lightboxImg) {
                 lightboxImg.src = img.src;
                 lightboxImg.alt = img.alt;
             }
             lightbox.classList.add('open');
-            document.body.style.overflow = 'hidden';
         });
     });
 
     function closeLightbox() {
         lightbox.classList.remove('open');
-        document.body.style.overflow = '';
     }
 
     if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
@@ -134,7 +136,18 @@ if (lightbox) {
         if (e.target === lightbox) closeLightbox();
     });
     document.addEventListener('keydown', e => {
-        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'Escape') {
+            if(lightbox.classList.contains('open')) {
+                closeLightbox();
+            } else {
+                // If lightbox is not open but a folder is, close the active folder
+                const activeFolder = document.querySelector('.folder-view.active');
+                if (activeFolder) {
+                    activeFolder.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+        }
     });
 }
 

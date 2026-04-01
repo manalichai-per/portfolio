@@ -32,47 +32,77 @@
         </div>
     </nav>
 
-    <div class="page-header">
-        <p class="section-label reveal">Portfolio</p>
-        <h1 class="page-title reveal">
-            Selected<br /><em>Work</em>
-        </h1>
-        <div class="filter-bar" role="group" aria-label="Filter by category">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="portrait">Portrait</button>
-            <button class="filter-btn" data-filter="street">Street</button>
-            <button class="filter-btn" data-filter="editorial">Editorial</button>
-            <button class="filter-btn" data-filter="documentary">Documentary</button>
-        </div>
-    </div>
+    <section class="folder-diagram">
+        <div class="folder-diagram-inner">
+            <svg class="diagram-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <!-- Lines from center to 4 corners -->
+                <line x1="50" y1="50" x2="20" y2="25" />
+                <line x1="50" y1="50" x2="80" y2="25" />
+                <line x1="50" y1="50" x2="20" y2="75" />
+                <line x1="50" y1="50" x2="80" y2="75" />
+            </svg>
 
-    <div class="gallery-grid">
-        <div class="gallery-item reveal" data-cat="documentary">
-            <div class="img-placeholder">Football</div>
-            <div class="gallery-caption">
-                <span class="gallery-caption-title">Football</span>
-                <span class="gallery-caption-cat">2025</span>
+            <!-- Center -->
+            <div class="folder-node root-folder">
+                <span class="folder-icon">🗂</span>
+                <span class="folder-name">Portfolio</span>
+            </div>
+
+            <!-- Nodes -->
+            <div class="folder-node sub-folder node-tl" data-target="folder-football">
+                <span class="folder-icon">📁</span>
+                <span class="folder-name">Football</span>
+            </div>
+            <div class="folder-node sub-folder node-tr" data-target="folder-korea">
+                <span class="folder-icon">📁</span>
+                <span class="folder-name">Korea 2025</span>
+            </div>
+            <div class="folder-node sub-folder node-bl" data-target="folder-sudan">
+                <span class="folder-icon">📁</span>
+                <span class="folder-name">Steps for Sudan</span>
+            </div>
+            <div class="folder-node sub-folder node-br" data-target="folder-bakery">
+                <span class="folder-icon">📁</span>
+                <span class="folder-name">Mimis Bakery</span>
             </div>
         </div>
-        <div class="gallery-item reveal" data-cat="documentary">
-            <div class="img-placeholder">Korea</div>
-            <div class="gallery-caption">
-                <span class="gallery-caption-title">Korea 2025</span>
-                <span class="gallery-caption-cat">2025</span>
+    </section>
+
+    <!-- Folder Contents (Hidden Overlays) -->
+    <div class="folder-overlays">
+        <div class="folder-view" id="folder-football">
+            <button class="close-folder">← Back to Portfolio</button>
+            <h2 class="folder-title">Football</h2>
+            <div class="folder-grid">
+                <img src="images/DSCF1095.jpeg" class="folder-img" alt="Football">
+                <img src="images/DSCF1105.jpeg" class="folder-img" alt="Football">
             </div>
         </div>
-        <div class="gallery-item reveal" data-cat="street">
-            <div class="img-placeholder">Sudan</div>
-            <div class="gallery-caption">
-                <span class="gallery-caption-title">Steps for Sudan</span>
-                <span class="gallery-caption-cat">Street</span>
+
+        <div class="folder-view" id="folder-korea">
+            <button class="close-folder">← Back to Portfolio</button>
+            <h2 class="folder-title">Korea 2025</h2>
+            <div class="folder-grid">
+                <img src="images/DSCF4329.JPG" class="folder-img" alt="Korea 2025">
             </div>
         </div>
-        <div class="gallery-item reveal" data-cat="editorial">
-            <div class="img-placeholder">Bakery</div>
-            <div class="gallery-caption">
-                <span class="gallery-caption-title">Mimis Bakery</span>
-                <span class="gallery-caption-cat">Editorial</span>
+
+        <div class="folder-view" id="folder-sudan">
+            <button class="close-folder">← Back to Portfolio</button>
+            <h2 class="folder-title">Steps for Sudan</h2>
+            <div class="folder-grid">
+                <img src="images/DSCF1935.jpg" class="folder-img" alt="Sudan">
+                <img src="images/DSCF1254.jpeg" class="folder-img" alt="Sudan">
+            </div>
+        </div>
+
+        <div class="folder-view" id="folder-bakery">
+            <button class="close-folder">← Back to Portfolio</button>
+            <h2 class="folder-title">Mimis Bakery</h2>
+            <div class="folder-grid">
+                <img src="images/DSCF4303.JPG" class="folder-img" alt="Bakery">
+                <img src="images/DSCF4240.JPG" class="folder-img" alt="Bakery">
+                <img src="images/DSCF1199.jpeg" class="folder-img" alt="Bakery">
             </div>
         </div>
     </div>
